@@ -1,15 +1,16 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {setCheckbox} from '../actions/app';
+import { connect } from 'react-redux';
+import { setCheckbox } from '../actions/app';
+import { Title } from './App.styles';
 
 const mapStateToProps = state => ({
-  checked: state.app.checkbox,
+  checked: state.app.checkbox
 });
 
 class App extends Component {
   static propTypes = {
-    checked: PropTypes.bool,
+    checked: PropTypes.bool
   };
 
   handleCheckChange = event => {
@@ -19,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        Hello World
+        <Title>Hello World</Title>
         <input
           type="checkbox"
           checked={this.props.checked}
