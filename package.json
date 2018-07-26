@@ -17,6 +17,9 @@
     "url": "https://github.com/KyleHowell/react-redux/issues"
   },
   "homepage": "https://github.com/KyleHowell/react-redux#readme",
+  "eslintConfig": {
+    "extends": "planet/react"
+  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
@@ -25,6 +28,10 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "eslint": "^5.2.0",
+    "eslint-config-planet": "^17.0.1",
+    "eslint-plugin-react": "^7.10.0",
+    "prettier": "^1.13.7",
     "react-hot-loader": "^4.3.3",
     "redux-devtools": "^3.4.1",
     "webpack": "^4.16.1",

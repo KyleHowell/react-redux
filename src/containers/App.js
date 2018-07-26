@@ -4,15 +4,15 @@ import {connect} from 'react-redux';
 import {setCheckbox} from '../actions/app';
 
 const mapStateToProps = state => ({
-  checked: state.app.checkbox
+  checked: state.app.checkbox,
 });
 
 class App extends Component {
   static propTypes = {
-    checked: PropTypes.bool
-  }
+    checked: PropTypes.bool,
+  };
 
-  handleCheckChange = (event) => {
+  handleCheckChange = event => {
     this.props.dispatch(setCheckbox(event.target.checked));
   };
 
@@ -20,7 +20,11 @@ class App extends Component {
     return (
       <div>
         Hello World
-        <input type="checkbox" checked={this.props.checked} onChange={this.handleCheckChange} />
+        <input
+          type="checkbox"
+          checked={this.props.checked}
+          onChange={this.handleCheckChange}
+        />
       </div>
     );
   }
