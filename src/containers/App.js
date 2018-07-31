@@ -1,30 +1,28 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { setCheckbox } from '../actions/app';
-import { Title } from './App.styles';
+import {connect} from 'react-redux';
+import {setCheckbox} from '../actions/app';
+import Checkbox from '../components/Checkbox';
 
 const mapStateToProps = state => ({
-  checked: state.app.checkbox
+  checked: state.app.checked,
 });
 
 class App extends Component {
   static propTypes = {
-    checked: PropTypes.bool
+    checked: PropTypes.bool,
   };
 
-  handleCheckChange = event => {
+  onCheckboxChange = event => {
     this.props.dispatch(setCheckbox(event.target.checked));
   };
 
   render() {
     return (
       <div>
-        <Title>Hello World</Title>
-        <input
-          type="checkbox"
+        <Checkbox
           checked={this.props.checked}
-          onChange={this.handleCheckChange}
+          onChange={this.onCheckboxChange}
         />
       </div>
     );
