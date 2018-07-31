@@ -22,13 +22,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Title>Hello World</Title>
-        <input
-          type="checkbox"
-          checked={this.props.checked}
-          onChange={this.handleCheckChange}
-        />
-
         <Todo />
       </div>
     );

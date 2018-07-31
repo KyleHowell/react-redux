@@ -1,5 +1,5 @@
 import {handleActions} from 'redux-actions';
-import {createTodo} from '../actions/todo';
+import {createTodo, toggleTodoStatus} from '../actions/todo';
 
 const initialState = {
   items: [
@@ -14,7 +14,16 @@ const todoReducer = handleActions(
   {
     [createTodo]: (state, action) => ({
       ...state,
-      items: state.items.push(action.payload),
+      items: [...state.items, action.payload],
+    }),
+    [toggleTodoStatus]: (state, action) => ({
+      ...state,
+      items: state.items.map(
+        item =>
+          item.text === action.payload.text
+            ? {text: item.text, status: !item.status}
+            : item
+      ),
     }),
   },
   initialState
