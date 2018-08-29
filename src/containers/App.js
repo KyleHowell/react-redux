@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {setCheckbox} from '../actions/app';
 import Checkbox from '../components/Checkbox';
+import './App.styles';
 
 const mapStateToProps = state => ({
   checked: state.app.checked,
