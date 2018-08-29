@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {setCheckbox} from '../actions/app';
-import Checkbox from '../components/Checkbox';
+import Header from './Header';
 import './App.styles';
 
 const mapStateToProps = state => ({
@@ -21,10 +21,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Checkbox
-          checked={this.props.checked}
-          onChange={this.onCheckboxChange}
-        />
+        <Header />
       </div>
     );
   }
